@@ -80,9 +80,34 @@ print(f"you are : {age}")
 
 #Lap 11 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-password = "123"
+password = ""
+password = input("please enter your password")
 
-while password != "" :
-   print("please enter your password")
-   password = input("enter your password!")
+while password != "Python123" :
    
+   password = input("Incorrect Password, try again: ")
+print ("Access Granted!")
+
+#Lap 12 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+for score in [80 , 55 ,45 ,90]:
+   if score < 50:
+      pass
+   print(f"If passed the {score}")
+#-----------------------------------
+for score in [80 , 55 ,45 ,90]:
+   if score < 50:
+      continue
+   print(f"If did not skip {score}")
+#-----------------------------------
+for badscore in [80 , 55 ,45 ,90]:
+   if badscore < 50:
+      break
+   print(f"We saw: {badscore}")
+
+#Lap 13 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+for row in range(1 , 4):
+   for column in range(1 , 4):
+     # print(f"Row: {range} , Column {column}")
+     print(f"{row} X {column} = {row * column}")
