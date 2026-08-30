@@ -1,0 +1,201 @@
+/* ===========================
+   Reset & Base Styles
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f4f6f8;
+}
+
+/* ===========================
+   Header
+=========================== */
+header{
+    background: linear-gradient(135deg, #2c3e50, #4a6b8a);
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1{
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+header h2{
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* ===========================
+   Main Layout
+=========================== */
+main{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+section{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+section h2{
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #4a6b8a;
+    padding-bottom: 8px;
+}
+
+section h3{
+    color: #4a6b8a;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Intro image */
+section img{
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* ===========================
+   Courses Table
+=========================== */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table caption{
+    margin-bottom: 12px;
+}
+
+thead{
+    background-color: #4a6b8a;
+    color: #ffffff;
+}
+
+th, td{
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even){
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover{
+    background-color: #eef2f5;
+}
+
+th[scope="row"]{
+    background-color: #e9edf1;
+    font-weight: 600;
+}
+
+/* ===========================
+   Registration Form
+=========================== */
+form p{
+    margin-bottom: 18px;
+}
+
+form label{
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2c3e50;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus{
+    outline: none;
+    border-color: #4a6b8a;
+    box-shadow: 0 0 0 3px rgba(74, 107, 138, 0.15);
+}
+
+form input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    background-color: #4a6b8a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #2c3e50;
+}
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
