@@ -1,0 +1,70 @@
+
+/* p vc .note vs #main-note */
+
+p{
+    color: #dd2d4a;
+}
+.note{
+    color: #dd2d4a;
+     
+}
+
+#main-note{
+    color: #dd2d4a;
+}
+body{
+    title
+    background-color: #f26a8d;
+    font-family: "Segoe UI", Arial , sans-serif;
+    font-size: medium;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main-note:hover {
+    color:#880d1e;
+}
+
+section{
+margin-bottom: 30px;
+padding: 20px;
+}
+form{
+    padding: 30px;
+    border: 1px solid #ccc;
+    width: 400px;
+    background-color: #cbeef3;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 4px rgba(0 , 0 , 0 , 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+button{
+    padding: 10px 20px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #880d1e;
+    color: white;
+}

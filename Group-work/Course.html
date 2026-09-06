@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <link rel = "stylesheet" href="courses.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web BootCamp Registration</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Web BootCamp Course</h1>
+        <h2>Start Your Programming Journey</h2>
+        <p>Join our bootcamp and learn the skills you need to build modern web applications.</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h3>About the BootCamp</h3>
+            <p>
+                Our Web BootCamp is designed for beginners who want to improve
+                their programming skills and learn the basics of web development.
+            </p>
+
+            <img
+                src="https://blog.tubikstudio.com/wp-content/uploads/2021/07/web-design-3411373_1280.jpg"
+                alt="Web development illustration"
+                width="300"
+            >
+        </section>
+
+        <section>
+            <h2>Available Courses</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Course</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Morning</td>
+                        <td>Python</td>
+                        <td>2 Months</td>
+                    </tr>
+
+                    <tr>
+                        <td>Morning</td>
+                        <td>JavaScript</td>
+                        <td>3 Months</td>
+                    </tr>
+
+                    <tr>
+                        <td>Evening</td>
+                        <td>Java</td>
+                        <td>1 Month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Course Registration</h2>
+
+            <form>
+
+                <p>
+                    <label for="name" >Name: </label>
+                    <br>
+                    <input type="text" id="name" name="name" required>
+                </p>
+
+                <p>
+                    <label for="email">Email:</label>
+                    <br>
+                    <input type="email" id="email" name="email">
+                </p>
+
+                <p>Choose your course:</p>
+
+                <input type="checkbox" id="python" name="course" value="Python">
+                <label for="python">Python</label>
+                <br>
+
+                <input type="checkbox" id="javascript" name="course" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+                <br>
+
+                <input type="checkbox" id="java" name="course" value="Java">
+                <label for="java">Java</label>
+
+                <p>
+                    <label for="message">Notes:</label>
+                    <br>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        cols="30"
+                        placeholder="Write your notes here..."
+                    ></textarea>
+                </p>
+
+                <button type="submit">Register Now</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Training Academy. All rights reserved.</p>
+        <p>Email: info@trainingacademy.com</p>
+    </footer>
+
+</body>
+
+</html>
