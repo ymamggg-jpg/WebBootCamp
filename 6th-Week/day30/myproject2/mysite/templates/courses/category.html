@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+Categories | Learnly
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <span class="tag">Browse</span>
+
+    <h1>Course Categories</h1>
+
+    <p>
+        Choose a category and explore courses that match your interests.
+    </p>
+
+</section>
+
+<section class="section">
+
+    <div class="card-grid">
+
+        <article class="info-card">
+            <div class="card-icon">💻</div>
+
+            <h3>Programming</h3>
+
+            <p>
+                Learn Python, Django, JavaScript and other programming skills.
+            </p>
+
+            <a href="{% url 'courses:list' %}" class="primary-button">
+                View Courses
+            </a>
+        </article>
+
+
+        <article class="info-card">
+            <div class="card-icon">🎨</div>
+
+            <h3>Design</h3>
+
+            <p>
+                Explore UI, UX and creative design fundamentals.
+            </p>
+
+            <a href="{% url 'courses:list' %}" class="primary-button">
+                View Courses
+            </a>
+        </article>
+
+
+        <article class="info-card">
+            <div class="card-icon">🌐</div>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Build modern websites and learn useful web technologies.
+            </p>
+
+            <a href="{% url 'courses:list' %}" class="primary-button">
+                View Courses
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+{% endblock %}

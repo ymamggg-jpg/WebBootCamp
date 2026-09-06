@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login | Learnly
+{% endblock %}
+
+
+{% block content %}
+
+<section class="form-section">
+
+    <div class="form-card">
+
+        <span class="tag">
+            Welcome back
+        </span>
+
+        <h1>Login</h1>
+
+        <p>
+            Continue your learning journey.
+        </p>
+
+        <form>
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                placeholder="example@email.com"
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                placeholder="Enter your password"
+            >
+
+
+            <button class="primary-button" type="submit">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

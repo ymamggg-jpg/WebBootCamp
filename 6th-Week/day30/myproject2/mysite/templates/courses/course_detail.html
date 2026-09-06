@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+Course | Learnly
+{% endblock %}
+
+
+{% block content %}
+
+<section class="detail-section">
+
+    <div class="detail-card">
+
+        <span class="tag">
+            Course Details
+        </span>
+
+        <h1>
+            {{ slug|title }}
+        </h1>
+
+        <p>
+            Welcome to this course. Here you can learn new skills,
+            follow lessons and track your progress.
+        </p>
+
+        <div class="course-info">
+
+            <div>
+                <strong>8</strong>
+                <span>Lessons</span>
+            </div>
+
+            <div>
+                <strong>4h</strong>
+                <span>Duration</span>
+            </div>
+
+            <div>
+                <strong>Beginner</strong>
+                <span>Level</span>
+            </div>
+
+        </div>
+
+        <a href="{% url 'payments:checkout' %}" class="primary-button">
+            Start Course
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

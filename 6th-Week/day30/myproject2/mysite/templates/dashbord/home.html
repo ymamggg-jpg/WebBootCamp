@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home | Learnly
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            Learn something new ✦
+        </span>
+
+        <h1>
+            Build skills.
+            <span>Grow your future.</span>
+        </h1>
+
+        <p>
+            Explore practical courses, learn at your own pace
+            and build skills that actually matter.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'courses:list' %}" class="primary-button">
+                Explore Courses
+            </a>
+
+            <a href="{% url 'users:profile' %}" class="secondary-button">
+                My Profile
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <p>Why Learnly?</p>
+        <h2>Everything you need to keep learning</h2>
+    </div>
+
+
+    <div class="card-grid">
+
+        <article class="info-card">
+            <div class="card-icon">✦</div>
+            <h3>Simple Learning</h3>
+            <p>
+                Courses designed to make learning clear,
+                comfortable and easy to follow.
+            </p>
+        </article>
+
+
+        <article class="info-card">
+            <div class="card-icon">✓</div>
+            <h3>Track Progress</h3>
+            <p>
+                Follow your learning journey and keep track
+                of what you have completed.
+            </p>
+        </article>
+
+
+        <article class="info-card">
+            <div class="card-icon">♡</div>
+            <h3>Learn Your Way</h3>
+            <p>
+                Choose the courses that match your interests
+                and learn at your own pace.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+{% endblock %}

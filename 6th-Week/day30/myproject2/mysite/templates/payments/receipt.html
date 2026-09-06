@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+Receipt | Learnly
+{% endblock %}
+
+{% block content %}
+
+<section class="detail-section">
+
+    <div class="detail-card">
+
+        <div class="card-icon" style="margin: 0 auto 20px;">
+            ✓
+        </div>
+
+        <span class="tag">Payment Successful</span>
+
+        <h1>Thank You!</h1>
+
+        <p>
+            Your payment was completed successfully.
+            You are now enrolled in the course.
+        </p>
+
+        <div class="course-info">
+
+            <div>
+                <strong>Python Basics</strong>
+                <span>Course</span>
+            </div>
+
+            <div>
+                <strong>$49</strong>
+                <span>Total</span>
+            </div>
+
+            <div>
+                <strong>Paid</strong>
+                <span>Status</span>
+            </div>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'courses:list' %}" class="primary-button">
+                View Courses
+            </a>
+
+            <a href="{% url 'dashboard:home' %}" class="secondary-button">
+                Back Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

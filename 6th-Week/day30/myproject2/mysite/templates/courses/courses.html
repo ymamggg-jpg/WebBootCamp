@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}
+Courses | Learnly
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-header">
+
+    <span class="tag">Explore</span>
+
+    <h1>Our Courses</h1>
+
+    <p>
+        Find something interesting and start learning today.
+    </p>
+
+</section>
+
+
+<section class="section">
+
+    <div class="course-grid">
+
+        <article class="course-card">
+
+            <div class="course-image">
+                💻
+            </div>
+
+            <div class="course-content">
+
+                <span class="course-category">
+                    Programming
+                </span>
+
+                <h2>Python Basics</h2>
+
+                <p>
+                    Learn Python fundamentals and start building
+                    your own programs.
+                </p>
+
+                <a href="{% url 'courses:detail' slug='python-basics' %}">
+                    View Course →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="course-card">
+
+            <div class="course-image">
+                🌐
+            </div>
+
+            <div class="course-content">
+
+                <span class="course-category">
+                    Web Development
+                </span>
+
+                <h2>Django Development</h2>
+
+                <p>
+                    Build dynamic websites using Python and Django.
+                </p>
+
+                <a href="{% url 'courses:detail' slug='django-development' %}">
+                    View Course →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="course-card">
+
+            <div class="course-image">
+                🎨
+            </div>
+
+            <div class="course-content">
+
+                <span class="course-category">
+                    Design
+                </span>
+
+                <h2>UI Design Basics</h2>
+
+                <p>
+                    Learn how to create simple, clean and usable interfaces.
+                </p>
+
+                <a href="{% url 'courses:detail' slug='ui-design' %}">
+                    View Course →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+{% endblock %}
