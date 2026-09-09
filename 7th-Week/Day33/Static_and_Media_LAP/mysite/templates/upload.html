@@ -1,0 +1,64 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programmer Profile</title>
+             
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+
+    <div class="profile-card">
+
+        {% if image_url %}
+            <img class="profile-img" src="{{ image_url }}" alt="Profile Picture">
+        {% else %}
+            <img class="profile-img"
+                 src="{% static 'images/cat.jpg' %}"
+                 alt="Default Profile Picture">
+        {% endif %}
+
+        <h1>Ymam Adel</h1>
+
+        <p class="job">Software Developer</p>
+
+        <p class="bio">
+            I enjoy building simple and useful applications,
+            learning new technologies, and turning ideas into code.
+        </p>
+
+        <div class="skills">
+            <span>Python</span>
+            <span>Django</span>
+            <span>HTML</span>
+            <span>CSS</span>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="image">Change Profile Picture</label>
+
+            <input
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+            >
+
+            <button type="submit">Upload Image</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+

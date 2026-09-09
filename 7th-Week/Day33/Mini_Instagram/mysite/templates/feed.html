@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mini Instagram</title>
+
+    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Mini Instagram</h1>
+        <p>Share a little moment ✨</p>
+    </header>
+
+
+    <main>
+
+        <!-- Create Post -->
+        <section class="create-post">
+
+            <h2>Create a Post</h2>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    required
+                >
+
+                <textarea
+                    name="description"
+                    placeholder="Write a caption..."
+                    required
+                ></textarea>
+
+                <input
+                    type="file"
+                    name="image"
+                    accept=".jpg,.jpeg,.png"
+                    required
+                >
+
+                <button type="submit">
+                    Share Post
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Feed -->
+        <h2 class="feed-title">Your Feed</h2>
+
+
+        {% for post in posts %}
+
+            <article class="post-card">
+
+                <div class="post-header">
+
+                    <div class="avatar">
+                        {{ post.username|first|upper }}
+                    </div>
+
+                    <div>
+                        <h3>@{{ post.username }}</h3>
+                        <span>just now</span>
+                    </div>
+
+                </div>
+
+
+                <img
+                    class="post-image"
+                    src="{{ post.image.url }}"
+                    alt="Post by {{ post.username }}"
+                >
+
+
+                <div class="post-content">
+
+                    <p class="description">
+                        <strong>@{{ post.username }}</strong>
+                        {{ post.description }}
+                    </p>
+
+
+                    <form
+                        method="POST"
+                        action="{% url 'like_post' post.id %}"
+                        class="like-form"
+                    >
+                        {% csrf_token %}
+
+                        <button
+                            type="submit"
+                            class="like-button"
+                        >
+                            ♡ Like
+                        </button>
+
+                    </form>
+
+
+                    {% if post.likes == 0 %}
+
+                        <p class="likes">
+                            Be the first to like this
+                        </p>
+
+                    {% else %}
+
+                        <p class="likes">
+                            {{ post.likes }} Likes
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+            </article>
+
+
+        {% empty %}
+
+            <div class="empty-feed">
+                <p>No posts yet.</p>
+                <span>Your first post will appear here ✨</span>
+            </div>
+
+        {% endfor %}
+
+    </main>
+
+</body>
+
+</html>

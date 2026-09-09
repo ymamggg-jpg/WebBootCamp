@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="profile">
+
+    <h1>Profile</h1>
+
+    {% if username %}
+        <p>Welcome, {{ username }}!</p>
+        <p>Your account is currently active.</p>
+    {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    </div>
+
+{% endblock %}
