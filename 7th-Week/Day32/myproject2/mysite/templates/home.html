@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-text">
+        <p class="small-title">Welcome back</p>
+
+        <h1>Hello, {{ username|title }} 👋</h1>
+
+        <p class="hero-description">
+            Explore our courses and find something new to learn today.
+        </p>
+
+        <a href="{% url 'courses' %}" class="hero-btn">
+            Browse Courses
+        </a>
+    </div>
+
+</section>
+
+<section class="home-info">
+
+    <div class="info-card">
+        <h2>Learn</h2>
+        <p>Choose from different courses and improve your skills.</p>
+    </div>
+
+    <div class="info-card">
+        <h2>Explore</h2>
+        <p>Check course levels, descriptions, and student enrollment.</p>
+    </div>
+
+    <div class="info-card">
+        <h2>Start</h2>
+        <p>Pick a course that interests you and view its details.</p>
+    </div>
+
+</section>
+
+{% endblock %}

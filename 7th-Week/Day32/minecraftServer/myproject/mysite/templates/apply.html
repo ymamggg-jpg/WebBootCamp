@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+Apply | Minecraft Server
+{% endblock %}
+
+{% block content %}
+
+<h1>Join Our Server</h1>
+
+<p>Fill out the form below to apply.</p>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Minecraft Gamertag:</label>
+    <input type="text" name="gamertag" required>
+
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" name="age" required>
+
+    <br><br>
+
+    <label>Discord Username:</label>
+    <input type="text" name="discord" required>
+
+    <br><br>
+
+    <button type="submit">Apply</button>
+</form>
+
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+{% endblock %}

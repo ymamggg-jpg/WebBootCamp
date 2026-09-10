@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ course.name|title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="course-detail">
+
+    <img src="{% static 'images/'|add:course.image %}" alt="{{ course.name }}">
+
+    <h1>{{ course.name|title }}</h1>
+
+    <p>Level: {{ course.level }}</p>
+
+    <p>Students: {{ course.student_count }}</p>
+
+    <p>{{ course.description|safe }}</p>
+
+    <a href="{% url 'courses' %}">Back to Courses</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Rules | Minecraft Server
+{% endblock %}
+
+{% block content %}
+
+<h1>Server Rules</h1>
+
+<p>Please read the rules before applying.</p>
+
+<ul>
+    {% for rule in rules %}
+        <li>{{ rule }}</li>
+    {% empty %}
+        <li>No rules have been added yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
