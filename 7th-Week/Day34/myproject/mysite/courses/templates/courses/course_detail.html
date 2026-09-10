@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>{{ course.name }}</title>
+</head>
+
+<body>
+
+<header>
+    <h1>{{ course.name }}</h1>
+    <p>Course Information</p>
+</header>
+
+
+<main class="container">
+
+    <div class="details-box">
+
+        <span class="badge">
+            {{ course.category }}
+        </span>
+
+        <span class="badge">
+            {{ course.difficulty }}
+        </span>
+
+
+        <nav class="tabs">
+
+            <a href="?tab=details">
+                Details
+            </a>
+
+            <a href="?tab=syllabus">
+                Syllabus
+            </a>
+
+            <a href="?tab=instructor">
+                Instructor
+            </a>
+
+        </nav>
+
+
+        <div class="tab-content">
+
+            {% if tab == "details" %}
+
+                <h2>Course Details</h2>
+                <p>{{ course.details }}</p>
+
+            {% elif tab == "syllabus" %}
+
+                <h2>Syllabus</h2>
+                <p>{{ course.syllabus }}</p>
+
+            {% elif tab == "instructor" %}
+
+                <h2>Instructor</h2>
+                <p>{{ course.instructor }}</p>
+
+            {% endif %}
+
+        </div>
+
+
+        <a href="{% url 'course_list' %}" class="back-link">
+            ← Back to Courses
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    <p>Course Catalog</p>
+</footer>
+
+</body>
+</html>

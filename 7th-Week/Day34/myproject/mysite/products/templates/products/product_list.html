@@ -1,0 +1,151 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Product Explorer</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Product Explorer</h1>
+    <p>Explore and find the products you're looking for.</p>
+</header>
+
+
+<main class="container">
+
+    <form method="get" class="filter-form">
+
+        <input
+            type="text"
+            name="q"
+            placeholder="Search products..."
+            value="{{ request.GET.q }}"
+        >
+
+
+        <select name="category">
+
+            <option value="">
+                All Categories
+            </option>
+
+            <option value="Electronics">
+                Electronics
+            </option>
+
+            <option value="Home">
+                Home
+            </option>
+
+        </select>
+
+
+        <input
+            type="number"
+            name="min_price"
+            placeholder="Minimum price"
+            value="{{ request.GET.min_price }}"
+        >
+
+
+        <select name="sort">
+
+            <option value="name">
+                Name
+            </option>
+
+            <option value="price">
+                Price
+            </option>
+
+            <option value="rating">
+                Rating
+            </option>
+
+        </select>
+
+
+        <button type="submit">
+            Apply
+        </button>
+
+    </form>
+
+
+    <div class="cards">
+
+        {% for product in products %}
+
+            <div class="card">
+
+                <h2>
+                    <a href="{% url 'product_detail' product.id %}">
+                        {{ product.name }}
+                    </a>
+                </h2>
+
+                <span class="badge">
+                    {{ product.category }}
+                </span>
+
+                <span class="badge">
+                    ⭐ {{ product.rating }}
+                </span>
+
+                <p>
+                    <strong>Price:</strong>
+                    {{ product.price }} SAR
+                </p>
+
+            </div>
+
+        {% empty %}
+
+            <p class="empty">
+                No products found.
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="pagination">
+
+        {% if page > 1 %}
+
+            <a href="?page={{ page|add:'-1' }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}{% if request.GET.min_price %}&min_price={{ request.GET.min_price }}{% endif %}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}">
+                Previous
+            </a>
+
+        {% endif %}
+
+
+        <span>
+            Page {{ page }}
+        </span>
+
+
+        <a href="?page={{ page|add:'1' }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}{% if request.GET.min_price %}&min_price={{ request.GET.min_price }}{% endif %}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}">
+            Next
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    <p>Product Explorer</p>
+</footer>
+
+</body>
+</html>

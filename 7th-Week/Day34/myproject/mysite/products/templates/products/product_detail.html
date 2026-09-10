@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>{{ product.name }}</title>
+</head>
+
+<body>
+
+<header>
+    <h1>{{ product.name }}</h1>
+    <p>Product Information</p>
+</header>
+
+
+<main class="container">
+
+    <div class="details-box">
+
+        <span class="badge">
+            {{ product.category }}
+        </span>
+
+        <span class="badge">
+            ⭐ {{ product.rating }}
+        </span>
+
+        <p>
+            <strong>Price:</strong>
+            {{ product.price }} SAR
+        </p>
+
+
+        <nav class="tabs">
+
+            <a href="?tab=details">
+                Details
+            </a>
+
+            <a href="?tab=reviews">
+                Reviews
+            </a>
+
+            <a href="?tab=shipping">
+                Shipping
+            </a>
+
+        </nav>
+
+
+        <div class="tab-content">
+
+            {% if tab == "details" %}
+
+                <h2>Details</h2>
+                <p>{{ product.description }}</p>
+
+            {% elif tab == "reviews" %}
+
+                <h2>Reviews</h2>
+
+                <p>
+                    This product has a rating of
+                    {{ product.rating }} out of 5.
+                </p>
+
+            {% elif tab == "shipping" %}
+
+                <h2>Shipping</h2>
+
+                <p>
+                    Standard shipping takes
+                    3–5 business days.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+
+        <a href="{% url 'product_list' %}" class="back-link">
+            ← Back to Products
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    <p>Product Explorer</p>
+</footer>
+
+</body>
+</html>

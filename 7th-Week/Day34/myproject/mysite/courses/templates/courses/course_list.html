@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Course Catalog</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Course Catalog</h1>
+    <p>Find a course and start learning something new.</p>
+</header>
+
+
+<main class="container">
+
+    <form method="get" class="filter-form">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search courses..."
+            value="{{ request.GET.search }}"
+        >
+
+        <button type="submit">Search</button>
+
+    </form>
+
+
+    <div class="cards">
+
+        {% for course in courses %}
+
+            <div class="card">
+
+                <h2>
+                    <a href="{% url 'course_detail' course.id %}">
+                        {{ course.name }}
+                    </a>
+                </h2>
+
+                <span class="badge">
+                    {{ course.category }}
+                </span>
+
+                <span class="badge">
+                    {{ course.difficulty }}
+                </span>
+
+            </div>
+
+        {% empty %}
+
+            <p class="empty">No courses found.</p>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="pagination">
+
+        {% if page > 1 %}
+
+            <a href="?page={{ page|add:'-1' }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}{% if request.GET.difficulty %}&difficulty={{ request.GET.difficulty }}{% endif %}">
+                Previous
+            </a>
+
+        {% endif %}
+
+        <span>Page {{ page }}</span>
+
+        <a href="?page={{ page|add:'1' }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}{% if request.GET.difficulty %}&difficulty={{ request.GET.difficulty }}{% endif %}">
+            Next
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    <p>Course Catalog</p>
+</footer>
+
+</body>
+</html>
